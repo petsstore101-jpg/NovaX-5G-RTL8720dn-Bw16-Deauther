@@ -6,10 +6,10 @@ struct Button {
   Button(uint8_t p)
     : pin(p), lastDebounceTime(0), state(HIGH), lastState(HIGH) {}
 };
-#define BTN_DOWN PA27
-#define BTN_UP PA12
-#define BTN_OK PA13
-#define BTN_BACK PB3
+#define BTN_DOWN PA30
+#define BTN_UP PA14
+#define BTN_OK PA12
+#define BTN_BACK PA7
 
 Button btnDown(BTN_DOWN);
 Button btnUp(BTN_UP);
@@ -41,3 +41,4 @@ bool ButtonPress(Button& btn, unsigned long debounceDelay = 25) {
   btn.lastState = reading;
   return false;
 }
+
